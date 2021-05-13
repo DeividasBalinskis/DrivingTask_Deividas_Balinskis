@@ -42,6 +42,11 @@ public class HoverMotor : MonoBehaviour
 
     private float TOLERANCE = 0.001f;
 
+    private void Start()
+    {
+        carMain = GetComponent<Rigidbody>();
+    }
+
     void Awake()
     {
         StartCoroutine(DriveCar());
