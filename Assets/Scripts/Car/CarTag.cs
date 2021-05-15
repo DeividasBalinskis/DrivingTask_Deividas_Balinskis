@@ -10,17 +10,13 @@ public class CarTag : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
-        if (other.CompareTag("TeamTrees"))
+        if (other.CompareTag("TeamTrees") || other.CompareTag("Wall"))
         {
             explode();
         }
         else if (other.CompareTag("Obstacle"))
         {
             other.GetComponent<Animator>().SetBool("hasCollided", true);
-            explode();
-        }
-        else if (other.CompareTag("Wall"))
-        {
             explode();
         }
         // Do not delete the section below - this is to guide you

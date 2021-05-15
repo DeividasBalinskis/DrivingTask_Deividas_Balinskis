@@ -29,10 +29,7 @@ public class TriggerExit : MonoBehaviour
     IEnumerator WaitAndDestroy()
     {
         yield return new WaitForSeconds(delay);
-
-        // Destroy the LevelBlock
-        //Utils.ForceCrash(ForcedCrashCategory.Abort);
-        Debug.LogError("Destroy the LevelBlock");
+        Destroy(transform.parent.gameObject);
     }
 
 }
