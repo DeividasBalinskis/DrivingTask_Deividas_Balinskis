@@ -9,17 +9,14 @@ public class CarTag : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // TODO: Insert collision code :)
-        
-        // One example for you, please follow this example making other collisions
-        if (collision.gameObject.CompareTag("TeamTrees"))
+        GameObject other = collision.gameObject;
+        if (other.CompareTag("TeamTrees"))
         {
-            Debug.LogError("Death");
             explode();
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
+        else if (other.CompareTag("Obstacle"))
         {
-            Debug.LogError("Death");
+            other.GetComponent<Animator>().SetBool("hasCollided", true);
             explode();
         }
         // Do not delete the section below - this is to guide you
