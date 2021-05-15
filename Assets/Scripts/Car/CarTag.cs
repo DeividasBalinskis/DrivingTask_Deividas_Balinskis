@@ -19,6 +19,10 @@ public class CarTag : MonoBehaviour
             other.GetComponent<Animator>().SetBool("hasCollided", true);
             explode();
         }
+        else if (other.CompareTag("Wall"))
+        {
+            explode();
+        }
         // Do not delete the section below - this is to guide you
         else if (collision.gameObject.CompareTag("Untagged"))
         {

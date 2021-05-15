@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1342923863271362703}
   m_Layer: 0
   m_Name: Wall#2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1981,7 +1981,7 @@ GameObject:
   - component: {fileID: 7684386849588221545}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3572,7 +3572,7 @@ MonoBehaviour:
   obstacles:
   - {fileID: 6339771083633679027, guid: 259919df6881895419281466130f27f8, type: 3}
   - {fileID: 6581174127812733574, guid: a8754ed82fe9e514898efd63f45f62a3, type: 3}
-  spawnProbability: 0
+  spawnProbability: 50
   spawnPoints:
   - {fileID: 5306563479208216388}
   - {fileID: 5916854060409054244}
