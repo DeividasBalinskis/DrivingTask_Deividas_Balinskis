@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
+    public CarTag carTag;
 
     public TMP_Text timeText;
 
@@ -13,36 +15,64 @@ public class CanvasManager : MonoBehaviour
     public TMP_Text highScoreText;
 
     public float elapsedTime;
+    private string runTime;
     public float startTime;
     
     void Start()
     {
-        
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (carTag.hasCollided)
+        {
+            EndGame();
+            return;
+        }
+
         UpdateTime();
     }
 
     public void UpdateTime()
     {
         elapsedTime = Time.time - startTime;
+
+        string minutes = ((int)elapsedTime / 60).ToString("00");
+        string seconds = (elapsedTime % 60).ToString("00");
+        runTime = minutes + ":" + seconds;
+        timeText.text = "TIME\n" + runTime;
+
+        if(elapsedTime > PlayerPrefs.GetFloat("HighScore", 0.0f))
+        {
+            PlayerPrefs.SetFloat("HighScore", elapsedTime);
+        }
+            
     }
 
     public void EndGame()
     {
-        // TODO: Setup EndGame Panel
+        endGamePanel.SetActive(true);
+        
+        runTimeText.text = "RUN TIME\n" + runTime;
+
+        string minutes = ((int)PlayerPrefs.GetFloat("HighScore") / 60).ToString("00");
+        string seconds = (PlayerPrefs.GetFloat("HighScore") % 60).ToString("00");
+        highScoreText.text = "BEST TIME\n" + minutes + ":" + seconds;
+
     }
 
     public void RestartGame()
     {
-        // TODO: Restart the game
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
     {
         // TODO: Quit Game
+        Debug.Log("APPLICATION QUIT");
+        Application.Quit();
     }
 }

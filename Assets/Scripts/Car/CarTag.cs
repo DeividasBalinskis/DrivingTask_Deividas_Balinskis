@@ -6,18 +6,19 @@ using UnityEngine.Diagnostics;
 public class CarTag : MonoBehaviour
 {
     public GameObject explosionEffect;
+    public bool hasCollided = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         GameObject other = collision.gameObject;
-        if (other.CompareTag("TeamTrees") || other.CompareTag("Wall"))
+        if (other.CompareTag("TeamTrees") || other.CompareTag("Wall") || other.CompareTag("Obstacle"))
         {
+            if(other.CompareTag("Obstacle"))
+            {
+                other.GetComponent<Animator>().SetBool("hasCollided", true);
+            }
             explode();
-        }
-        else if (other.CompareTag("Obstacle"))
-        {
-            other.GetComponent<Animator>().SetBool("hasCollided", true);
-            explode();
+            hasCollided = true;
         }
         // Do not delete the section below - this is to guide you
         else if (collision.gameObject.CompareTag("Untagged"))
