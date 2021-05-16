@@ -65,13 +65,11 @@ public class CanvasManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
     {
-        // TODO: Quit Game
         Debug.Log("APPLICATION QUIT");
         Application.Quit();
     }

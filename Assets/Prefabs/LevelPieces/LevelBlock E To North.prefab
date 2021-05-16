@@ -6461,6 +6461,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrackCurved
       objectReference: {fileID: 0}
+    - target: {fileID: 8909570926046647088, guid: e3c80e4d06704d64fbb6252d729ca282,
+        type: 3}
+      propertyPath: m_TagString
+      value: LevelBlock
+      objectReference: {fileID: 0}
     - target: {fileID: 8909570926046647090, guid: e3c80e4d06704d64fbb6252d729ca282,
         type: 3}
       propertyPath: m_Mesh
