@@ -15,12 +15,15 @@ public class CanvasManager : MonoBehaviour
     public TMP_Text highScoreText;
 
     public float elapsedTime;
-    private string runTime;
     public float startTime;
-    
+
+    public float delay = 4f;
+
+    private string runTime;
+
     void Start()
     {
-        startTime = Time.time;
+        startTime = Time.time + delay;
     }
 
     // Update is called once per frame
@@ -73,4 +76,5 @@ public class CanvasManager : MonoBehaviour
         Debug.Log("APPLICATION QUIT");
         Application.Quit();
     }
+
 }
