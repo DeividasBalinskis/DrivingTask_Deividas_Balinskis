@@ -6,6 +6,8 @@ using UnityEngine.Diagnostics;
 public class CarTag : MonoBehaviour
 {
     public GameObject explosionEffect;
+
+    //Used in Canvas manager to know, when to enable DndGamePanel
     public bool hasCollided = false;
 
     private void OnCollisionEnter(Collision collision)
