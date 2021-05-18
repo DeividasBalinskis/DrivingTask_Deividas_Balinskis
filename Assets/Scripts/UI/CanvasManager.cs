@@ -73,8 +73,7 @@ public class CanvasManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("APPLICATION QUIT");
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }

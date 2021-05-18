@@ -183,14 +183,12 @@ public class HoverMotor : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         
-        var position = transform.position;
         var velocity = carMain.velocity;
         
         carMain.AddForce(transform.up * 10000f, ForceMode.Impulse);
         
         yield return new WaitForSeconds(0.3f);
         
-        transform.position = position;
         carMain.velocity = velocity;
         
         StartCoroutine(DriveCar());
